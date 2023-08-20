@@ -23,9 +23,11 @@ class _StoreListScreenState extends State<StoreListScreen> {
         width: double.infinity,
         height: double.infinity,
         child: Consumer<StoreModel>(builder: (context, storeModel, child){
-          return Column(
-              children: storeModel.stores.map((e) => buildStoreBox(store: e)).toList(),
-            );
+          return SingleChildScrollView(
+            child: Column(
+                children: storeModel.stores.map((e) => buildStoreBox(store: e)).toList(),
+              ),
+          );
         },)
       ),
       floatingActionButton: FloatingActionButton(
